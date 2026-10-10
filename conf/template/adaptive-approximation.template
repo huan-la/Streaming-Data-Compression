@@ -1,0 +1,12 @@
+{
+    "data": "<DATA>",
+    "compress": "out/compress/<NAME>_adaptive-approximation.bin",
+    "decompress": "out/decompress/<NAME>_adaptive-approximation.csv",
+    "interval": <INTERVAL>,
+    "algorithm": {
+        "name": "adaptive-approximation",
+        "error": <ERROR>,
+        "penalty": <PENALTY>,
+        "candidates": ["exponent", "linear", "quadratic", "cubic"]
+    }
+}

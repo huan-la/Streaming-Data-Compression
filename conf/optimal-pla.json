@@ -1,0 +1,10 @@
+{
+    "data": "data/Fungi.csv",
+    "compress": "out/compress/Fungi_optimal-pla.bin",
+    "decompress": "out/decompress/Fungi_optimal-pla.csv",
+    "interval": 1,
+    "algorithm": {
+        "name": "optimal-pla",
+        "error": 4.355
+    }
+}

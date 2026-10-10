@@ -1,0 +1,11 @@
+{
+    "data": "<DATA>",
+    "compress": "out/compress/<NAME>_kangaroo.bin",
+    "decompress": "out/decompress/<NAME>_kangaroo.csv",
+    "interval": <INTERVAL>,
+    "algorithm": {
+        "name": "kangaroo",
+        "size": <BUFFER_SIZE>,
+        "window": <WINDOW_SIZE>
+    }
+}

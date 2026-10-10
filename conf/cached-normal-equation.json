@@ -1,0 +1,12 @@
+{
+    "data": "data/Fungi.csv",
+    "compress": "out/compress/Fungi_cached-normal-equation.bin",
+    "decompress": "out/decompress/Fungi_cached-normal-equation.csv",
+    "interval": 1,
+    "algorithm": {
+        "name": "cached-normal-equation",
+        "error": 4.355,
+        "mode": "individual",
+        "degree": 2
+    }
+}

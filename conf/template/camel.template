@@ -1,0 +1,11 @@
+{
+    "data": "<DATA>",
+    "compress": "out/compress/<NAME>_camel.bin",
+    "decompress": "out/decompress/<NAME>_camel.csv",
+    "interval": <INTERVAL>,
+    "algorithm": {
+        "name": "camel",
+        "size": <BUFFER_SIZE>,
+        "decimal": <DECIMAL_PRECISION>
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "data": "data/Fungi.csv",
+    "compress": "out/compress/Fungi_swing-filter.bin",
+    "decompress": "out/decompress/Fungi_swing-filter.csv",
+    "interval": 1,
+    "algorithm": {
+        "name": "swing-filter",
+        "error": 4.355
+    }
+}

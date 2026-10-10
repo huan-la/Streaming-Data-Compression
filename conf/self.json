@@ -1,0 +1,10 @@
+{
+    "data": "data/Fungi.csv",
+    "compress": "out/compress/Fungi_self.bin",
+    "decompress": "out/decompress/Fungi_self.csv",
+    "interval": 1,
+    "algorithm": {
+        "name": "self",
+        "size": 1000
+    }
+}

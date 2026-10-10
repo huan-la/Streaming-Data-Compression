@@ -1,0 +1,10 @@
+{
+    "data": "data/Fungi.csv",
+    "compress": "out/compress/Fungi_semi-mixed-pla.bin",
+    "decompress": "out/decompress/Fungi_semi-mixed-pla.csv",
+    "interval": 1,
+    "algorithm": {
+        "name": "semi-mixed-pla",
+        "error": 4.355
+    }
+}

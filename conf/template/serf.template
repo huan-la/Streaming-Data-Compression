@@ -1,0 +1,12 @@
+{
+    "data": "<DATA>",
+    "compress": "out/compress/<NAME>_serf.bin",
+    "decompress": "out/decompress/<NAME>_serf.csv",
+    "interval": <INTERVAL>,
+    "algorithm": {
+        "name": "serf",
+        "error": <ERROR>,
+        "size": <BUFFER_SIZE>,
+        "mode": <MODE>                  # "qt" or "xor"
+    }
+}

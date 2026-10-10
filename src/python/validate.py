@@ -1,0 +1,198 @@
+import sys
+import json
+from enum import Enum
+
+class Error(Enum):
+    INVALID_ALGO=1
+    MISSING_PARAM=2
+    INVALID_PARAM=3
+    
+
+def validate(algo):
+    if algo["name"] == "gorilla":
+        if "size" not in algo:
+            exit(Error.MISSING_PARAM.value)
+
+    elif algo["name"] == "chimp":
+        if "size" not in algo or "mode" not in algo:
+            exit(Error.MISSING_PARAM.value)
+        elif algo["mode"] != "basic" and algo["mode"] != "128":
+            exit(Error.INVALID_PARAM.value)
+
+    elif algo["name"] == "elf":
+        if "size" not in algo:
+            exit(Error.MISSING_PARAM.value)
+    
+    elif algo["name"] == "self":
+        if "size" not in algo:
+            exit(Error.MISSING_PARAM.value)
+
+    elif algo["name"] == "dexor":
+        if "size" not in algo:
+            exit(Error.MISSING_PARAM.value)
+
+    elif algo["name"] == "kangaroo":
+        if "size" not in algo or "window" not in algo:
+            exit(Error.MISSING_PARAM.value)
+
+    elif algo["name"] == "serf":
+        if "size" not in algo or "mode" not in algo:
+            exit(Error.MISSING_PARAM.value)
+        elif algo["mode"] != "qt" and algo["mode"] != "xor":
+            exit(Error.INVALID_PARAM.value)
+
+    elif algo["name"] == "camel":
+        if "size" not in algo or "decimal" not in algo:
+            exit(Error.MISSING_PARAM.value)
+        elif algo["decimal"] < 1 or algo["decimal"] > 4:
+            exit(Error.INVALID_PARAM.value)
+
+    elif algo["name"] == "pmc":
+        if "error" not in algo or "mode" not in algo:
+            exit(Error.MISSING_PARAM.value)
+        elif algo["mode"] != "midrange" and algo["mode"] != "mean":
+            exit(Error.INVALID_PARAM.value)
+            
+    elif algo["name"] == "hybrid-pca":
+        if "error" not in algo or "w_size" not in algo or "n_window" not in algo:
+            exit(Error.MISSING_PARAM.value)
+            
+    elif algo["name"] == "cached-normal-equation":
+        if "error" not in algo or "mode" not in algo or "degree" not in algo:
+            exit(Error.MISSING_PARAM.value)
+        elif algo["mode"] != "individual" and algo["mode"] != "accumulate":
+            exit(Error.INVALID_PARAM.value)
+    
+    elif algo["name"] == "swab":
+        if "error" not in algo or "mode" not in algo or "n_segment" not in algo:
+            exit(Error.MISSING_PARAM.value)
+        elif algo["mode"] != "interpolate" and algo["mode"] != "regression":
+            exit(Error.INVALID_PARAM.value)
+
+    elif algo["name"] == "poly-swab":
+        if "error" not in algo or "mode" not in algo or "degree" not in algo or "n_segment" not in algo:
+            exit(Error.MISSING_PARAM.value)
+        elif algo["mode"] != "interpolate" and algo["mode"] != "regression":
+            exit(Error.INVALID_PARAM.value)
+    
+    elif algo["name"] == "optimal-pla":
+        if "error" not in algo:
+            exit(Error.MISSING_PARAM.value)
+
+    elif algo["name"] == "conn-I-pla":
+        if "error" not in algo:
+            exit(Error.MISSING_PARAM.value)
+
+    elif algo["name"] == "ioriented-pla":
+        if "error" not in algo:
+            exit(Error.MISSING_PARAM.value)
+
+    elif algo["name"] == "semi-optimal-pla":
+        if "error" not in algo:
+            exit(Error.MISSING_PARAM.value)
+    
+    elif algo["name"] == "semi-mixed-pla":
+        if "error" not in algo:
+            exit(Error.MISSING_PARAM.value)
+        
+    elif algo["name"] == "swing-filter":
+        if "error" not in algo:
+            exit(Error.MISSING_PARAM.value)
+        
+    elif algo["name"] == "slide-filter":
+        if "error" not in algo:
+            exit(Error.MISSING_PARAM.value)
+
+    elif algo["name"] == "cov-pla":
+        if "error" not in algo:
+            exit(Error.MISSING_PARAM.value)
+
+    elif algo["name"] == "mix-piece":
+        if "error" not in algo or "n_segment" not in algo: 
+            exit(Error.MISSING_PARAM.value)
+            
+    elif algo["name"] == "adaptive-approximation":
+        if "error" not in algo or "penalty" not in algo or "candidates" not in algo:
+            exit(Error.MISSING_PARAM.value)
+    
+    elif algo["name"] == "smart-grid-compression":
+        if "error" not in algo or "degree" not in algo:
+            exit(Error.MISSING_PARAM.value)
+
+    elif algo["name"] == "adapt-ppa":
+        if "error" not in algo:
+            exit(Error.MISSING_PARAM.value)
+
+    else:
+        exit(Error.INVALID_ALGO.value)
+    
+    
+def parse(conf):
+    print(conf["data"])
+    print(conf["compress"])
+    print(conf["decompress"])
+    print(conf["interval"])
+    
+    algo = conf["algorithm"]
+    if algo["name"] == "gorilla":
+        print("{} {}".format(algo["name"], algo["size"]))
+    elif algo["name"] == "chimp":
+        print("{} {} {}".format(algo["name"], algo["size"], algo["mode"]))
+    elif algo["name"] == "elf":
+        print("{} {}".format(algo["name"], algo["size"]))
+    elif algo["name"] == "self":
+        print("{} {}".format(algo["name"], algo["size"]))
+    elif algo["name"] == "serf":
+        print("{} {} {} {}".format(algo["name"], algo["error"], algo["size"], algo["mode"]))
+    elif algo["name"] == "camel":
+        print("{} {} {}".format(algo["name"], algo["size"], algo["decimal"]))    
+    elif algo["name"] == "dexor":
+        print("{} {}".format(algo["name"], algo["size"]))
+    elif algo["name"] == "kangaroo":
+        print("{} {} {}".format(algo["name"], algo["size"], algo["window"]))
+    elif algo["name"] == "pmc":
+        print("{} {} {}".format(algo["name"], algo["error"], algo["mode"]))
+    elif algo["name"] == "hybrid-pca":
+        print("{} {} {} {}".format(algo["name"], algo["error"], algo["w_size"], algo["n_window"]))
+    elif algo["name"] == "cached-normal-equation":
+        print("{} {} {} {}".format(algo["name"], algo["error"], algo["mode"], algo["degree"]))
+    elif algo["name"] == "swab":
+        print("{} {} {} {}".format(algo["name"], algo["error"], algo["mode"], algo["n_segment"]))
+    elif algo["name"] == "poly-swab":
+        print("{} {} {} {} {}".format(algo["name"], algo["error"], algo["mode"], algo["degree"], algo["n_segment"]))
+    elif algo["name"] == "optimal-pla":
+        print("{} {}".format(algo["name"], algo["error"]))
+    elif algo["name"] == "conn-I-pla":
+        print("{} {}".format(algo["name"], algo["error"]))
+    elif algo["name"] == "ioriented-pla":
+        print("{} {}".format(algo["name"], algo["error"]))
+    elif algo["name"] == "semi-optimal-pla":
+        print("{} {}".format(algo["name"], algo["error"]))
+    elif algo["name"] == "semi-mixed-pla":
+        print("{} {}".format(algo["name"], algo["error"]))
+    elif algo["name"] == "swing-filter":
+        print("{} {}".format(algo["name"], algo["error"]))
+    elif algo["name"] == "slide-filter":
+        print("{} {}".format(algo["name"], algo["error"]))
+    elif algo["name"] == "cov-pla":
+        print("{} {}".format(algo["name"], algo["error"]))
+    elif algo["name"] == "mix-piece":
+        print("{} {} {}".format(algo["name"], algo["error"], algo["n_segment"]))
+    elif algo["name"] == "adaptive-approximation":
+        print("{} {} {} {}".format(algo["name"], algo["error"], algo["penalty"], " ".join(model for model in algo["candidates"])))
+    elif algo["name"] == "smart-grid-compression":
+        print("{} {} {}".format(algo["name"], algo["error"], algo["degree"]))
+    elif algo["name"] == "adapt-ppa":
+        print("{} {} {}".format(algo["name"], algo["error"], algo["degree"]))
+        
+
+    
+if __name__ == "__main__":
+    with open(sys.argv[1], 'r') as file:
+        conf = json.load(file)
+
+    validate(conf['algorithm'])
+    parse(conf)
+    
+    exit(0)
+        

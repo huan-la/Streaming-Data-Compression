@@ -1,0 +1,12 @@
+{
+    "data": "<DATA>",
+    "compress": "out/compress/<NAME>_cached-normal-equation.bin",
+    "decompress": "out/decompress/<NAME>_cached-normal-equation.csv",
+    "interval": <INTERVAL>,
+    "algorithm": {
+        "name": "cached-normal-equation",
+        "error": <ERROR>,
+        "mode": <MODE>,             # "individual" or "accumulate"
+        "degree": <MAX_DEGREE>
+    }
+}

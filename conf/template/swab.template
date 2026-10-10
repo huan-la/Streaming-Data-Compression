@@ -1,0 +1,12 @@
+{
+    "data": "<DATA>",
+    "compress": "out/compress/<NAME>_swab.bin",
+    "decompress": "out/decompress/<NAME>_swab.csv",
+    "interval": <INTERVAL>,
+    "algorithm": {
+        "name": "swab",
+        "error": <ERROR>,
+        "mode": <MODE>,                 # "regression" or "interpolate"
+        "n_segment": <NUM_SEGMENT>
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "data": "data/Fungi.csv",
+    "compress": "out/compress/Fungi_cov-pla.bin",
+    "decompress": "out/decompress/Fungi_cov-pla.csv",
+    "interval": 1,
+    "algorithm": {
+        "name": "cov-pla",
+        "error": 4.355
+    }
+}

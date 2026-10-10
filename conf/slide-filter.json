@@ -1,0 +1,10 @@
+{
+    "data": "data/Fungi.csv",
+    "compress": "out/compress/Fungi_slide-filter.bin",
+    "decompress": "out/decompress/Fungi_slide-filter.csv",
+    "interval": 1,
+    "algorithm": {
+        "name": "slide-filter",
+        "error": 4.355
+    }
+}

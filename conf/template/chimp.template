@@ -1,0 +1,11 @@
+{
+    "data": "<DATA>",
+    "compress": "out/compress/<NAME>_chimp.bin",
+    "decompress": "out/decompress/<NAME>_chimp.csv",
+    "interval": <INTERVAL>,
+    "algorithm": {
+        "name": "chimp",
+        "size": <BUFFER_SIZE>,
+        "mode": <MODE>              # "128" or "basic"
+    }
+}

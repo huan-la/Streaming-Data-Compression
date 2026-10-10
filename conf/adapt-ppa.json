@@ -1,0 +1,11 @@
+{
+    "data": "data/Fungi.csv",
+    "compress": "out/compress/Fungi_adapt-ppa.bin",
+    "decompress": "out/decompress/Fungi_adapt-ppa.csv",
+    "interval": 1,
+    "algorithm": {
+        "name": "adapt-ppa",
+        "error": 4.355,
+        "degree": 2
+    }
+}

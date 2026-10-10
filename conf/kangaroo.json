@@ -1,0 +1,11 @@
+{
+    "data": "data/Fungi.csv",
+    "compress": "out/compress/Fungi_kangaroo.bin",
+    "decompress": "out/decompress/Fungi_kangaroo.csv",
+    "interval": 1,
+    "algorithm": {
+        "name": "kangaroo",
+        "size": 1000,
+        "window": 32
+    }
+}

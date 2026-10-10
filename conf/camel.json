@@ -1,0 +1,11 @@
+{
+    "data": "data/Fungi.csv",
+    "compress": "out/compress/Fungi_camel.bin",
+    "decompress": "out/decompress/Fungi_camel.csv",
+    "interval": 1,
+    "algorithm": {
+        "name": "camel",
+        "size": 1000,
+        "decimal": 3
+    }
+}

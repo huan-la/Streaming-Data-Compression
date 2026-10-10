@@ -1,0 +1,10 @@
+{
+    "data": "<DATA>",
+    "compress": "out/compress/<NAME>_elf.bin",
+    "decompress": "out/decompress/<NAME>_elf.csv",
+    "interval": <INTERVAL>,
+    "algorithm": {
+        "name": "elf",
+        "size": <BUFFER_SIZE>
+    }
+}

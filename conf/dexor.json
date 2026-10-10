@@ -1,0 +1,10 @@
+{
+    "data": "data/Fungi.csv",
+    "compress": "out/compress/Fungi_dexor.bin",
+    "decompress": "out/decompress/Fungi_dexor.csv",
+    "interval": 1,
+    "algorithm": {
+        "name": "dexor",
+        "size": 1000
+    }
+}

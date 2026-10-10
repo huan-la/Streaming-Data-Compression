@@ -1,0 +1,11 @@
+{
+    "data": "<DATA>",
+    "compress": "out/compress/<NAME>_adapt-ppa.bin",
+    "decompress": "out/decompress/<NAME>_adapt-ppa.csv",
+    "interval": <INTERVAL>,
+    "algorithm": {
+        "name": "adapt-ppa",
+        "error": <ERROR>,
+        "degree": <MAX_DEGREE>
+    }
+}

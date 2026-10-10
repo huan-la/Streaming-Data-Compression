@@ -1,0 +1,11 @@
+{
+    "data": "data/Fungi.csv",
+    "compress": "out/compress/Fungi_mix-piece.bin",
+    "decompress": "out/decompress/Fungi_mix-piece.csv",
+    "interval": 1,
+    "algorithm": {
+        "name": "mix-piece",
+        "error": 4.355,
+        "n_segment": 100
+    }
+}

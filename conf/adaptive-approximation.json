@@ -1,0 +1,12 @@
+{
+    "data": "data/Fungi.csv",
+    "compress": "out/compress/Fungi_adaptive-approximation.bin",
+    "decompress": "out/decompress/Fungi_adaptive-approximation.csv",
+    "interval": 1,
+    "algorithm": {
+        "name": "adaptive-approximation",
+        "error": 4.355,
+        "penalty": 0.5,
+        "candidates": ["exponent", "linear", "quadratic", "cubic"]
+    }
+}

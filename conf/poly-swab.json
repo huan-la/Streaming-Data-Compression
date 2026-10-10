@@ -1,0 +1,13 @@
+{
+    "data": "data/Fungi.csv",
+    "compress": "out/compress/Fungi_poly-swab.bin",
+    "decompress": "out/decompress/Fungi_poly-swab.csv",
+    "interval": 1,
+    "algorithm": {
+        "name": "poly-swab",
+        "error": 4.355,
+        "mode": "interpolate",
+        "degree": 2,
+        "n_segment": 5
+    }
+}

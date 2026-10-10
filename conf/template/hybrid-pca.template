@@ -1,0 +1,12 @@
+{
+    "data": "<DATA>",
+    "compress": "out/compress/<NAME>_hybrid-pca.bin",
+    "decompress": "out/decompress/<NAME>_hybrid-pca.csv",
+    "interval": <INTERVAL>,
+    "algorithm": {
+        "name": "hybrid-pca",
+        "error": <ERROR>,
+        "w_size": <WINDOW_SIZE>,
+        "n_window": <NUM_WINDOW>
+    }
+}

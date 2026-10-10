@@ -1,0 +1,13 @@
+{
+    "data": "<DATA>",
+    "compress": "out/compress/<NAME>_poly-swab.bin",
+    "decompress": "out/decompress/<NAME>_poly-swab.csv",
+    "interval": <INTERVAL>,
+    "algorithm": {
+        "name": "poly-swab",
+        "error": <ERROR>,
+        "mode": <MODE>,                 # "interpolate" or "regression"
+        "degree": <MAX_DEGREE>,
+        "n_segment": <NUM_SEGMENT>
+    }
+}
