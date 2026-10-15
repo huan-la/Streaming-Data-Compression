@@ -2,4 +2,3 @@ script/evaluate.sh
 bin/
 .vscode/
 conf/
-data/
