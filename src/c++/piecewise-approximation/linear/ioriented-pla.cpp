@@ -246,7 +246,7 @@ namespace IOrientedPLA {
     BinObj* Compression::serialize() {
         BinObj* obj = new BinObj;
 
-        //if (this->__feasible_rectangle(obj)) { return obj; }
+        // if (this->__feasible_rectangle(obj)) { return obj; }
         if (this->__feasible_cone(obj)) { return obj; }
         else {
             float slope = (this->u_line->get_slope() + this->l_line->get_slope()) / 2;
@@ -293,7 +293,7 @@ namespace IOrientedPLA {
                 delete this->l_line; this->l_line = nullptr;
                 this->u_cvx.clear(); this->l_cvx.clear();
 
-                p.x = 0; this->pivot->x = 0; this->pivot->y = p.y;
+                this->pivot->x = 0; this->pivot->y = p.y;
                 u_cvx.append(Point2D(0, p.y - this->error));
                 l_cvx.append(Point2D(0, p.y + this->error));
                 this->length = 1;
@@ -303,33 +303,31 @@ namespace IOrientedPLA {
                 bool update_l = p.y - this->error > this->l_line->subs(p.x);
                 
                 if (update_u) {
-                    int index = 0;
+                    int index = -1;
                     double min_slp = INFINITY;
 
                     for (int i=0; i<this->u_cvx.size(); i++) {
                         Line line = Line::line(this->u_cvx.at(i), Point2D(p.x, p.y + this->error));
                         if (line.get_slope() < min_slp) {
-                            min_slp = line.get_slope();
                             index = i;
+                            min_slp = line.get_slope();
+                            this->u_line->set(line.get_slope(), line.get_intercept());
                         }
                     }
-                    Line line = Line::line(this->u_cvx.at(index), Point2D(p.x, p.y + this->error));
-                    delete this->u_line; this->u_line = new Line(line.get_slope(), line.get_intercept());
                     this->u_cvx.erase_from_begin(index);
                 }
                 if (update_l) {
-                    int index = 0;
+                    int index = -1;
                     double max_slp = -INFINITY;
 
                     for (int i=0; i<this->l_cvx.size(); i++) {
                         Line line = Line::line(this->l_cvx.at(i), Point2D(p.x, p.y - this->error));
                         if (line.get_slope() > max_slp) {
-                            max_slp = line.get_slope();
                             index = i;
+                            max_slp = line.get_slope();
+                            this->l_line->set(line.get_slope(), line.get_intercept());
                         }
                     }
-                    Line line = Line::line(this->l_cvx.at(index), Point2D(p.x, p.y - this->error));
-                    delete this->l_line; this->l_line = new Line(line.get_slope(), line.get_intercept());
                     this->l_cvx.erase_from_begin(index);
                 }
 

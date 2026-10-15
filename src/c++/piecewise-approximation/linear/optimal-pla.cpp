@@ -19,7 +19,6 @@ namespace OptimalPLA {
 
     BinObj* Compression::serialize() {
         BinObj* obj = new BinObj;
-        Point2D p = Line::intersection(*this->u_line, *this->l_line);
         float slope = (this->u_line->get_slope() + this->l_line->get_slope()) / 2;
         float intercept = (this->u_line->get_intercept() + this->l_line->get_intercept()) / 2;
 
