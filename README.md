@@ -93,6 +93,16 @@ To execute an algorithm, run the following command with the corresponding config
 $ script/run.sh <CONFIG_FILE>
 ```
 
+To run multiple experiments simultaneously, add the required parameters to the corresponding templates, then execute the following command.
+
+```bash
+# To run lossy algorithms defined in evaluate.sh
+$ script/evaluate.sh lossy
+
+# To run lossless algorithms defined in evaluate.sh
+$ script/evaluate.sh lossless
+```
+
 ### Statistical Output
 
 Statistical output of each execution is appended to the ``out/experiments.csv`` file, including:
@@ -140,7 +150,7 @@ This family partitions a data stream into multiple segments, with each represent
 * `semi-optimal-pla` : An Optimal Online Semi-Connected PLA Algorithm With Maximum Error Bound. (Link: https://ieeexplore.ieee.org/document/9039677)
 * `semi-mixed-pla` : An Online PLA Algorithm with Maximum Error Bound for Generating Optimal Mixed‐segments. (Link: https://link.springer.com/article/10.1007/s13042-019-01052-y)
 * `mix-piece` : Flexible Grouping of Linear Segments for Highly Accurate Lossy Compression of Time Series Data. (Link: https://link.springer.com/article/10.1007/s00778-024-00862-z)
-* `ioriented-pla` : Ours.
+* `ioriented-pla` : Our implementation defaults to IOrientedPLA+. To run IOrientedPLA, simply comment out the call to `__feasible_rectangle()` in the `serialize()` function of the `ioriented-pla.cpp` file.
 
 ### Piecewise polynomial approximation:
 This family partitions a data stream into multiple segments, with each represented by a **polynomial of degree k**, where k is a predefined hyperparameter.
