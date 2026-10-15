@@ -246,18 +246,17 @@ namespace IOrientedPLA {
     BinObj* Compression::serialize() {
         BinObj* obj = new BinObj;
 
-        // if (this->__feasible_rectangle(obj)) { return obj; }
+        if (this->__feasible_rectangle(obj)) { return obj; }
         if (this->__feasible_cone(obj)) { return obj; }
-        else {
-            float slope = (this->u_line->get_slope() + this->l_line->get_slope()) / 2;
-            float intercept = (this->u_line->get_intercept() + this->l_line->get_intercept()) / 2;
+        
+        float slope = (this->u_line->get_slope() + this->l_line->get_slope()) / 2;
+        float intercept = (this->u_line->get_intercept() + this->l_line->get_intercept()) / 2;
 
-            long embedded = this->length << 3 | 0;
-            obj->put(VariableByteEncoding::encode(embedded));
-            obj->put((float) slope);
-            obj->put((float) intercept);
-        }
-
+        long embedded = this->length << 3 | 0;
+        obj->put(VariableByteEncoding::encode(embedded));
+        obj->put((float) slope);
+        obj->put((float) intercept);
+    
         return obj;
     }
     
