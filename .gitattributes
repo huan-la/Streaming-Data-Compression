@@ -1,1 +1,2 @@
 data/scientific-research/StarLightCurves.csv filter=lfs diff=lfs merge=lfs -text
+data/StarLightCurves.csv filter=lfs diff=lfs merge=lfs -text
